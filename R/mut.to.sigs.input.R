@@ -30,13 +30,7 @@
 #'   contexts for the columns. Each entry is the count of how many times a
 #'   mutation with that trinucleotide context is seen in the sample.
 #' @export
-mut.to.sigs.input <- function(mut.ref,
-                              sample.id = "Sample",
-                              chr       = "chr",
-                              pos       = "pos",
-                              ref       = "ref",
-                              alt       = "alt",
-                              bsg       = NULL) {
+mut.to.sigs.input <- function(mut.ref, sample.id = "Sample", chr = "chr", pos = "pos", ref = "ref", alt = "alt", bsg = NULL) {
 
   if (exists("mut.ref", mode = "list")) {
     mut.full <- mut.ref
@@ -44,9 +38,9 @@ mut.to.sigs.input <- function(mut.ref,
     if (file.exists(mut.ref)) {
       mut.full <- utils::read.table(
         mut.ref,
-        sep         = "\t",
-        header      = TRUE,
-        as.is       = FALSE,
+        sep = "\t",
+        header = TRUE,
+        as.is = FALSE,
         check.names = FALSE
       )
     } else {
